@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+
+class GradeBook {
+private:
+    std::string courseName;
+    std::string instructorName;
+
+public:
+    // Constructor without initial values
+    GradeBook() {}
+
+    // Setter method for courseName
+    void setCourseName(const std::string& name) {
+        courseName = name;
+    }
+
+    // Setter method for instructorName
+    void setInstructorName(const std::string& name) {
+        instructorName = name;
+    }
+
+    // Display method to print the welcome message
+    void displayMessage() {
+        std::cout << "Welcome to the grade book for " << courseName << "!" << std::endl;
+        std::cout << "This course is presented by: " << instructorName << std::endl;
+    }
+};
+
+int main() {
+    std::string course, instructor;
+
+    // Input for course name
+    std::getline(std::cin, course);
+
+    // Input for instructor name
+    std::getline(std::cin, instructor);
+
+    // Create a GradeBook object
+    GradeBook gradeBook;
+
+    // Set the course and instructor names
+    gradeBook.setCourseName(course);
+    gradeBook.setInstructorName(instructor);
+
+    // Display the welcome message
+    gradeBook.displayMessage();
+
+    return 0;
+}
