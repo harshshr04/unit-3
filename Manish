@@ -1,0 +1,42 @@
+#include <iostream>
+
+class Counter {
+private:
+    int value;
+
+public:
+    // Constructor to initialize the counter with an initial value
+    Counter(int initialValue) : value(initialValue) {}
+
+    // Method to increment the counter
+    void increment(int amount) {
+        value += amount;
+    }
+
+    // Method to get the current counter value
+    int getValue() const {
+        return value;
+    }
+};
+
+int main() {
+    int initialValue, randomIncrement;
+
+    // Input for initial value
+    std::cin >> initialValue;
+
+    // Input for random increment
+    std::cin >> randomIncrement;
+
+    // Create a Counter object with the initial value
+    Counter counter(initialValue);
+
+    // Display the initial value
+    std::cout << counter.getValue() << std::endl;
+
+    // Increment the counter and display the incremented value
+    counter.increment(randomIncrement);
+    std::cout << counter.getValue() << std::endl;
+
+    return 0;
+}
