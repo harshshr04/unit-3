@@ -1,0 +1,70 @@
+#include <iostream>
+
+class Date {
+private:
+    int day;
+    int month;
+    int year;
+
+public:
+    // Default constructor initializes to 31st December 2022
+    Date() : day(31), month(12), year(2022) {}
+
+    // Constructor with custom date, applies input validation
+    Date(int d, int m, int y) {
+        setDay(d);
+        setMonth(m);
+        setYear(y);
+    }
+
+    // Setter method for day with input validation
+    void setDay(int d) {
+        if (d >= 1 && d <= 31) {
+            day = d;
+        } else {
+            day = 30; // Default to 30 if invalid
+        }
+    }
+
+    // Setter method for month with input validation
+    void setMonth(int m) {
+        if (m >= 1 && m <= 12) {
+            month = m;
+        } else {
+            month = 12; // Default to 12 if invalid
+        }
+    }
+
+    // Setter method for year with input validation
+    void setYear(int y) {
+        if (y >= 2023 && y <= 2998) {
+            year = y;
+        } else {
+            year = 2023; // Default to 2023 if invalid
+        }
+    }
+
+    // Display method to print the date in the format dd-mm-yy
+    void display() {
+        std::cout << day << "-" << month << "-" << year << std::endl;
+    }
+};
+
+int main() {
+    int d, m, y;
+
+    // Input for custom date
+    std::cin >> d >> m >> y;
+
+    // Create a Date object with the custom date
+    Date customDate(d, m, y);
+
+    // Create a default Date object
+    Date defaultDate;
+
+    // Display the initial and updated dates
+    defaultDate.display();
+    customDate.display();
+
+    return 0;
+}
